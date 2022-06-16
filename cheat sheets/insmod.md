@@ -30,7 +30,8 @@ void cleanup_module(void)
 ```
 
 ## 2. compile
-makefile:
+Makefile:
+> !make sure to have a capital 'M' in the file name, otherwise it wont works
 ```
 obj-m = hello.o
 KVERSION = $(shell uname -r)
@@ -41,6 +42,7 @@ clean:
 ```
 
 then run make then insmod app.ko :
+> ! be careful to install your 'linux-headers-5.xx.xx-xx-amd64' before run make comman
 ```bash
 make
 insmod hello.ko
@@ -50,13 +52,14 @@ insmod hello.ko
 
 Verify that module loaded using the
  ```bash
-lsmod | less
+lsmod | grep hello
 ```
 
 See message in /var/log/message file using the tail command
  ```bash
 tail -f /var/log/message
 ```
+or
 
 Unload the module using the rmmod command
  ```bash
