@@ -33,5 +33,4 @@ cat /proc/modules
 ```
 or
  ```bash
-lsmod | less
 ```
